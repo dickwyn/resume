@@ -1,0 +1,232 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{scrextend}
+
+%\usepackage{showframe} % debugging use only
+
+\geometry{
+  letterpaper,
+  left = 0.5in,
+  right = 0.5in,
+  top = 0.6in,
+  bottom = 0.6in
+}
+
+\hypersetup{
+  colorlinks = true, 
+  linkcolor = blue, 
+  urlcolor  = blue,
+  citecolor = blue, 
+  anchorcolor = blue
+}
+
+%   CUSTOM STYLES  %
+\thispagestyle{empty} % remove page number
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+%   MACROS  %
+\newcommand{\sectionStart}{
+  \begin{itemize}[label={},leftmargin=0in]
+}
+\newcommand{\sectionEnd}{
+  \end{itemize}
+}
+\newcommand{\head}[9]{
+  \noindent
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \centerline{
+      \textbf{\href{#1}{\color{black}{\LARGE {\underline{#2}}}}}
+    }
+    \vspace{5pt}\\
+    \centerline{
+      \href{mailto:#3}{\underline{#3}} $\mid$
+      #4 $\mid$
+      #5 : \href{#6}{\underline{#7}} $\mid$
+      #8 : \href{#9}{\underline{#7}}
+    }
+  \end{tabular*}
+  \vspace{-10pt}
+}
+\newcommand{\summaryText}[1]{
+  \item
+  \begin{addmargin}[7pt]{0pt}
+    {#1}
+  \end{addmargin}
+}
+\newcommand{\educationItem}[5]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r@{}}
+    {#1 in \textbf{#2}}  & {#3}\\
+    {\textit{#4}} & {#5}\\\vspace{-18pt}
+  \end{tabular*}
+  \vspace{-5pt}
+}
+\newcommand{\skillItem}[2]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{1.0\textwidth}{l@{}l@{}}
+    {\textbf{#1}: } & {#2}
+  \end{tabular*}\vspace{-17pt}
+}
+\newcommand{\jobHeading}[3]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r@{}}
+    \normalsize{\textbf{#1}} & #2 \\
+    \textit{\small#3} \\
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\projectHeading}[4]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r@{}}
+    \normalsize{{\href{#1}{#2}} \textbf{#3}} & #4 \\
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\listStart}{\begin{itemize}}
+\newcommand{\listEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\bulletItem}[1]{
+  \item
+  \small{
+    {#1 \vspace{-1.8pt}}
+  }
+}
+
+\begin{document}
+
+%   HERO   %
+\head
+  {http://dickwyn.xyz/}
+  {Dick Wyn Yong}
+  {dickwyn@outlook.com}
+  {+1 (480) 388-5741}
+  {Github}
+  {https://github.com/dickwyn}
+  {dickwyn}
+  {LinkedIn}
+  {https://www.linkedin.com/in/dickwyn}
+
+%   SUMMARY   %
+\section{Summary}
+\sectionStart
+  \summaryText
+  {Senior Computer Science student with experience in developing full stack web applications using technologies such as JavaScript (ES6), ExpressJS and MongoDB. Seeking a \textbf{Summer 2018 Internship} to leverage exemplary coding skills, analytical skills and leadership skills.}
+\sectionEnd
+
+%   EDUCATION   %
+\section{Education}
+\sectionStart
+  \educationItem
+    {Bachelor of Science} 
+    {Computer Science} 
+    {Expected December 2018}
+    {Arizona State University [Tempe, AZ]} 
+    {3.68/4.0}
+\sectionEnd
+
+%   SKILLS   %
+\section{Technical Skills}
+\sectionStart
+  \skillItem
+    {Languages}
+    {JavaScript (ES6), Java, C\#, SQL, HTML, CSS/Sass, C/C++, Python, Matlab}
+  \skillItem
+    {Frameworks}
+    {Bootstrap, .NET, Node, jQuery, Jekyll, Express, React, Angular}
+  \skillItem
+    {Tools}
+    {Photoshop, Illustrator, Bash, Git, Gulp, WordPress, Axure RP, Amazon AWS, \LaTeX\ }
+  \vspace{3pt}
+\sectionEnd
+
+%   PROJECTS   %
+\section{Projects}
+\sectionStart
+  \projectHeading
+    {http://testorangesafe.dickwyn.xyz/}
+    {SafeDevils}
+    {(JavaScript, NodeJS, PugJS)}
+    {May 2018}
+  \listStart
+    \bulletItem
+      {A simple safety web application that integrates the SafeTrek API to invoke emergency services when the alert button is triggered.}
+  \listEnd
+  \projectHeading
+    {}
+    {SFLE Knowledgebase}
+    {(AxureRP, MySQL, NodeJS)}
+    {February 2018 --- Present}
+  \listStart
+    \bulletItem
+      {Prototyped an interactive web application with Axure RP where practitioners and the public can browse the solutions within the database.}
+    \bulletItem
+      {Designed a scalable open-source database using MySQL that stores data from researchers and stakeholders about sustainable local food economies.}
+  \listEnd
+  \projectHeading
+    {https://goo.gl/EsvFb6}
+    {Sound Waves}
+    {}
+    {January 2017 --- April 2017}
+  \listStart
+    \bulletItem
+      {Prototyped a side-scrolling mobile game which included a scoring system, game streaks and a theme for SOUNDS Academy to help underprivileged students practice string instruments.}
+    \bulletItem
+      {Won EPICS Catalyst Award from Ira A. Fulton Schools of Engineering.}
+  \listEnd
+  \projectHeading
+    {https://github.com/dickwyn/onelap}
+    {OneLap}
+    {(C, Kinetis Microcontroller)}
+    {April 2015 --- June 2015}
+  \listStart
+    \bulletItem
+      {Developed an autonomous navigation algorithm in C that aligned the vehicle to the center of two white lines. Model race car built with a FRDM-KL25Z board, a line scan camera and a servo.}
+  \listEnd
+\sectionEnd
+  
+%   EXPERIENCE   %
+\section{Experience}
+\sectionStart
+  \jobHeading
+    {Teaching Assistant}
+    {August 2016 --- December 2017}
+    {Ira A. Fulton Schools of Engineering [Tempe, AZ]}
+  \listStart
+    \bulletItem
+    {Assisted the professor to guide a class of 40 freshmen students to understand introductory programming techniques.}
+    \bulletItem
+    {Involved in creating learning modules for students in \textbf{Matlab} to help learn hardware programming on the Lego Mindstorms platform.}
+  \listEnd
+\sectionEnd
+
+%   LEADERSHIP   %
+\section{Leadership}
+\sectionStart
+  \jobHeading
+    {Student Facilitator}
+    {February 2017 --- Present}
+    {ASU Student and Cultural Engagement [Tempe, AZ]}
+  \listStart
+    \bulletItem
+    {Facilitated diversity \& inclusion workshops for 80 students on topics such as conflict resolution, cultural adjustment and intersectionality of sex, gender \& sexuality.}
+  \listEnd
+  \jobHeading
+    {Vice President}
+    {September 2017 --- April 2018}
+    {ASU Coalition of International Students [Tempe, AZ]}
+  \listStart
+    \bulletItem
+    {Coordinated 58 student leaders within the coalition to host 5 large-scale events that celebrated culture from all around the world that collectively engaged over 6,000 students throughout the academic year.}
+    \bulletItem
+    {Supervised all internal operations within the coalition such as project management and conducting strategic reviews.}
+  \listEnd
+\sectionEnd
+
+\end{document}
