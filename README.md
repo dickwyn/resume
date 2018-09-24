@@ -33,4 +33,4 @@ Here is the list of marcos (commands) that my template uses:
 
 ## License
 
-[MIT](https://github.com/dickwyn/resume/blob/master/LICENSE)
+The contents of this repository are covered under the [MIT License](https://github.com/dickwyn/resume/blob/master/LICENSE)
