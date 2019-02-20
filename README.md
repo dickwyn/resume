@@ -1,4 +1,4 @@
-# Résumé
+# Resume
 
 ![Project Preview](preview.png)
 
